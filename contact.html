@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Hiroyuki Draw</title>
+    <style>
+       /* General Reset */
+       body {
+            margin: 0;
+            font-family: 'Arimo', sans-serif;
+            background-color: #121212;
+            color: #f4f4f4;
+            line-height: 1.6;
+        }
+
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+header {
+            background: #432104;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #f0a500;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-family: 'Copperplate Gothic', serif;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #f0a500;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff7b00;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        h2 {
+            color: orange;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .contact-info a {
+            color: orange;
+            text-shadow: 0px 3px 12px rgb(85, 85, 85);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .contact-info span {
+            font-weight: bold;
+        }
+        footer {
+            position:relative;
+            top: 300px;
+            color: white;
+            padding: 10px;
+            text-align:center;
+            margin-top: 20px;
+        }
+
+         /* Responsive Design */
+         @media (max-width: 1024px) {
+            .grid-item {
+                height: 120px;
+            }
+
+            .main h2 {
+                font-size: 3rem;
+            }
+
+            .continue-btn {
+                font-size: 1.2rem;
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-item {
+                height: 100px;
+            }
+
+            .main h2 {
+                font-size: 2.5rem;
+            }
+
+            .continue-btn {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 2rem;
+            }
+
+            .grid-item {
+                height: 80px;
+            }
+
+            .main h2 {
+                font-size: 2rem;
+            }
+
+            .continue-btn {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Hiroyuki Draw</div>
+    <nav>
+        <ul>
+            <li><a href="index2.html">Home</a></li>
+            <li><a href="About1.html">About</a></li>
+            <li><a href="works1.html">Works</a></li>
+            <li><a href="Services1.html">Services</a></li>
+            <li><a href="contact.html">Contacts</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Thank you for visiting Hiroyuki Draw!</h2>
+    <p>If you’d like to get in touch with me for commissions, collaborations, or just to chat, you can reach me through any of the following platforms:</p>
+
+    <div class="contact-info">
+        <p><span>Email:</span> <a href="mcakes136@gmail.com">mcakes136@gmail.com</a></p>
+
+        <p><span>Social Media:</span></p>
+        <ul>
+            <li><a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fjoshuamaclsei%2Fprofilecard%2F%3Figsh%3DMWQzd2JvMXI3OHVtbw%253D%253D%26fbclid%3DIwZXh0bgNhZW0CMTAAAR1MLIfJ2RtNDpLLx2k7gC-0Oy1jfWnrZ3ijO203kVHTCiGijgN3hEZ8_ro_aem_qFUHmT_c4xPqVDwAy5VgJg&h=AT0PPbLFEHnz5I_6MScN94obelDlUVEThtE6L57cGejBanD6MdiqTlRjCl_amEj8cG14WkT03GqcZqwsL-i_hb6VIa1r-d3xo7rwFBkEABDNkFXhKDYu0geZPPyPLzkZ-u_Bb4s3jos3qzs" target="_blank">Instagram: @hiro_yuki_draw</a></li>
+
+            <li><a href="https://www.facebook.com/profile.php?id=100089180053360" target="_blank">Facebook: Hiroyuki Draw</a></li>
+        </ul>
+
+        <p><span>YouTube:</span> <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fyoutube.com%2F%40joshuamac8555%3Fsi%3DFZsU0v1o6IxM_3Ms%26fbclid%3DIwZXh0bgNhZW0CMTAAAR1GSBKZbqjupnbQjAIuQgV9z0A9rw29ql4cge2ubpmF0vUV5QFw1SEjG78_aem_iwW6q436tJkYKKtwrjCofw&h=AT0a1OD0RND38bqhKiIORnKeWgIZrBKlxQI4NOyB9pVO5Cn7lnVx7MiQHnTDv-aHJQdMcZ9wfPjDzEnux7zVMLoDnCY5Kjz5YS-Y6Hnk9bmqGzOsyJCeS456qo2EH_YZltSEXg" target="_blank">Hiroyuki Draw</a></p>
+
+        <p><span>Other Platforms:</span></p>
+        <ul>
+            <li><a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.tiktok.com%2F%40aldri.098%3F_t%3D8rqqEJnrN4h%26_r%3D1%26fbclid%3DIwZXh0bgNhZW0CMTAAAR2kjg4iYc1ldFA8GPrIjJ3wRSwknPXopf3kWXrQ_ZVbJP-AwZrwNZRaV5k_aem_Nvr99arSaGA1kpucOt3uLQ&h=AT0a1OD0RND38bqhKiIORnKeWgIZrBKlxQI4NOyB9pVO5Cn7lnVx7MiQHnTDv-aHJQdMcZ9wfPjDzEnux7zVMLoDnCY5Kjz5YS-Y6Hnk9bmqGzOsyJCeS456qo2EH_YZltSEXg" target="_blank">TikTok: @hiro.draw69</a></li>
+
+        </ul>
+
+        <p>If you're interested in collaborating or have any inquiries, feel free to reach out! I look forward to connecting with you.</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Hiroyuki Draw. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
