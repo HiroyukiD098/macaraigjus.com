@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Cyberpunk Portfolio</title>
+    <style>
+         * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: #000; /* Black background */
+    color: #ff9100; /* Neon green text */
+    overflow-x: hidden;
+}
+
+/* Background Animation */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 35px solid #ff9100;
+    opacity: 0.6;
+    animation: float 12s linear infinite, sway 5s ease-in-out infinite;
+}
+
+/* Keyframe Animations */
+@keyframes float {
+    0% { transform: translateY(100vh) scale(0.5) rotate(0deg); opacity: 0.6; }
+    50% { transform: translateY(50vh) scale(1) rotate(180deg); opacity: 1; }
+    100% { transform: translateY(-20vh) scale(0.8) rotate(360deg); opacity: 0.3; }
+}
+
+@keyframes sway {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(30px); }
+}
+
+/* Triangle Instances */
+.triangle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 10s; }
+.triangle:nth-child(2) { left: 30%; animation-delay: 2s; animation-duration: 8s; }
+.triangle:nth-child(3) { left: 50%; animation-delay: 4s; animation-duration: 12s; }
+.triangle:nth-child(4) { left: 70%; animation-delay: 1s; animation-duration: 14s; }
+.triangle:nth-child(5) { left: 90%; animation-delay: 3s; animation-duration: 9s; }
+
+/* Header */
+.header {
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid #ff9100;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ff9100;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffe666;
+}
+
+/* Sections */
+.hero, .about, .projects, .contact {
+    padding: 4rem 2rem;
+    text-align: center;
+    max-width: 80%;
+    margin: 2rem auto;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ff9100;
+    border-radius: 10px;
+}
+
+.hero h1, .about h2, .projects h2, .contact h2 {
+    color: #ff9100;
+    text-shadow: 0 0 10px #ff9100;
+    margin-bottom: 1rem;
+}
+        /* Contact Section */
+.contact {
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 90%;
+    margin: 2rem auto;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ff9100;
+    border-radius: 10px;
+}
+
+.contact h2 {
+    color: #ff9100;
+    text-shadow: 0 0 10px #ff9100;
+    margin-bottom: 1rem;
+}
+
+.contact p {
+    color: #ffe666;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #ffe666;
+}
+
+.form-group label {
+    font-weight: bold;
+    text-shadow: 0 0 5px #ff9100;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 2px solid #ff9100;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffe666;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ffe666;
+    box-shadow: 0 0 5px #ffe666;
+    outline: none;
+}
+
+.submit-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+    background: #ff9100;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background: #ffe666;
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid #ff9100;
+    color: #ff9100;
+}
+
+    </style>
+</head>
+<body>
+    <div class="background-animation">
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+    </div>
+
+    <header class="header">
+        <nav class="navbar">
+            <h1>Hiroyuki Draw</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutpage.html">About</a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out by filling out the form below.</p> <br><br><br>
+
+        <form class="contact-form" action="@emailjs" method="post">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" placeholder="Write your message here..." rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Macaraig Joshua. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your user ID
+        emailjs.init("service_i1iek4c"); // Replace "your_user_id" with your actual EmailJS user ID
+
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Collect form data
+            const serviceID = "service_i1iek4c"; // Replace with your EmailJS service ID
+            const templateID = "template_bqd3nfg"; // Replace with your EmailJS template ID
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(response => {
+                    alert("Message sent successfully!");
+                    console.log("SUCCESS!", response.status, response.text);
+                    this.reset(); // Reset form fields
+                })
+                .catch(error => {
+                    alert("Failed to send message. Please try again later.");
+                    console.error("FAILED...", error);
+                });
+        });
+    </script>
