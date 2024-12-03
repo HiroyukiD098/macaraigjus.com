@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Cyberpunk Portfolio</title>
+    <style>
+              /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: #000; /* Black background */
+    color: #ff9100; /* Neon green text */
+    overflow-x: hidden;
+}
+
+/* Background Animation */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 35px solid #ff9100;
+    opacity: 0.6;
+    animation: float 12s linear infinite, sway 5s ease-in-out infinite;
+}
+
+/* Keyframe Animations */
+@keyframes float {
+    0% { transform: translateY(100vh) scale(0.5) rotate(0deg); opacity: 0.6; }
+    50% { transform: translateY(50vh) scale(1) rotate(180deg); opacity: 1; }
+    100% { transform: translateY(-20vh) scale(0.8) rotate(360deg); opacity: 0.3; }
+}
+
+@keyframes sway {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(30px); }
+}
+
+/* Triangle Instances */
+.triangle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 10s; }
+.triangle:nth-child(2) { left: 30%; animation-delay: 2s; animation-duration: 8s; }
+.triangle:nth-child(3) { left: 50%; animation-delay: 4s; animation-duration: 12s; }
+.triangle:nth-child(4) { left: 70%; animation-delay: 1s; animation-duration: 14s; }
+.triangle:nth-child(5) { left: 90%; animation-delay: 3s; animation-duration: 9s; }
+
+/* Header */
+.header {
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid #ff9100;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ff9100;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffe666;
+}
+
+/* Sections */
+.hero, .about, .projects, .contact {
+    padding: 4rem 2rem;
+    text-align: center;
+    max-width: 80%;
+    margin: 2rem auto;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ff9100;
+    border-radius: 10px;
+}
+
+.hero h1, .about h2, .projects h2, .contact h2 {
+    color: #ff9100;
+    text-shadow: 0 0 10px #ff9100;
+    margin-bottom: 1rem;
+}
+
+/* Project Gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of items */
+    gap: 1rem; /* Space between items */
+    justify-content: center;
+    margin: 2rem auto;
+    max-width: 90%;
+}
+
+/* Images and Videos */
+.gallery img, .gallery video {
+    width: 250px;
+    height: 250px;
+    object-fit: cover; /* Ensures images/videos fit neatly */
+    border-radius: 10px;
+    border: 3px solid #ff9100;
+    box-shadow: 0 0 10px #ff9100;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Zoom Effect */
+.gallery img:hover, .gallery video:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 0 20px #ff9100;
+}
+
+/* Headings for Sections */
+.projects h3 {
+    color: #ffe666;
+    margin-top: 2rem;
+    text-shadow: 0 0 10px #ff9100;
+    text-align: center;
+}
+
+
+/* Footer */
+.footer {
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid #ff9100;
+    color: #ff9100;
+}
+    </style>
+</head>
+<body>
+    <div class="background-animation">
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+    </div>
+
+    <header class="header">
+        <nav class="navbar">
+            <h1>Hiroyuki Draw</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutpage.html">About</a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="projects">
+        <h2>My Projects</h2>
+
+        <!-- Digital Artworks -->
+        <h3>Digital Artworks</h3>
+        <div class="gallery">
+            <img src="https://scontent.fmnl17-6.fna.fbcdn.net/v/t39.30808-6/448640440_451031071212891_4224695360176519863_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeEdGxydBX_X6kEyxG25VW_DJfERV5haufMl8RFXmFq584NqNLXFsZnVPo-8fpGbSwxz1ALnOMFvO_Lsl872Kg8e&_nc_ohc=TP9zNkrtSBYQ7kNvgGgx2hY&_nc_zt=23&_nc_ht=scontent.fmnl17-6.fna&_nc_gid=AD0xDNBFPK30rkcJu6yVksD&oh=00_AYBkavnFiRd2LQL0ym61XFkXqjlBywQhLCTbVZHu8w8lhg&oe=6751D0DB" alt="Digital Artwork 1">
+            <img src="https://scontent.fmnl17-5.fna.fbcdn.net/v/t39.30808-6/428638503_374528655529800_1462038947337465709_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeHONgub1WYLoYFnGR_bkUw4VgJXA-G1tWFWAlcD4bW1YY4MY75H6PWWukTmNczgdo7mj2tipjFbxRUS86hV-LYq&_nc_ohc=txd_WXQUTjoQ7kNvgFFZPQ2&_nc_zt=23&_nc_ht=scontent.fmnl17-5.fna&_nc_gid=AztU-28lBGe1Nj1d5mOPUnl&oh=00_AYC5lctcwLwmpb6UtTzoib-3xoj9hWrX1OqSAKdKbWQcCA&oe=6751EF9D" alt="Digital Artwork 2">
+            <img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/396729487_306349059014427_7376168703940188641_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeFR9CQWng0--gLwlI5QJnEWSVosi1nSqJ1JWiyLWdKonWCS9rFuGpPBUfH3D3qBuqECcuMB6ZwvZoD2_AmQ8Kum&_nc_ohc=l8FRH3DvWXAQ7kNvgGAbAWB&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=AXHmS6EKSyRqevMOXdTcu9E&oh=00_AYBQ0MghBdC_zMKtwALpnGMlxNMpLU-beirqr74OOakn5g&oe=6751EA49" alt="Digital Artwork 3">
+            <img src="https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-6/362258795_239742605675073_4313052786355801216_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeELFjAKdYJ4NJKQQJrvrdc21x3z57mbIhjXHfPnuZsiGBNd8Z4ZF9u-uDUboevDYPkiAaYkNBW2cZYaARoVzTyj&_nc_ohc=l1iyMA-NScUQ7kNvgGCszmH&_nc_zt=23&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=AtZ0zuAjZGANxue9QmbZ1Xa&oh=00_AYB-pdbyVeRE3A8mImdg7J_nnXH2xSzZLQCqt7nplbdFqw&oe=6751D252" alt="Digital Artwork 4">
+            <img src="https://scontent.fmnl17-5.fna.fbcdn.net/v/t39.30808-6/358153006_230582563257744_2012175710642400260_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeFCSu1C6wtUGtvuOADAUAn9snEz32m8XXKycTPfabxdciEa2B7uWIIA4tFIAeiizVUJuud8BD-ac4eo1gao11Fm&_nc_ohc=pGFmCWSF-sIQ7kNvgH7JRTj&_nc_zt=23&_nc_ht=scontent.fmnl17-5.fna&_nc_gid=AJMhGLtBc7ZpzpyRG3XmgFm&oh=00_AYCn6QmLvns7hcfHOORtyTooXsTXSsRDsD6_5TNYuBsp6g&oe=6751DA5C" alt="Digital Artwork 5">
+            <img src="https://scontent.fmnl17-4.fna.fbcdn.net/v/t39.30808-6/325914137_1849454778768367_4109484654710777960_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGpl6iie3jmB7RzLKyAYL1UwKt0mh0-W_7Aq3SaHT5b_jboJOWMTSAm69nTL27fvynFG_B87a0af4WJBvGXTAEA&_nc_ohc=0Eg9JzGMAhUQ7kNvgFtFDDw&_nc_zt=23&_nc_ht=scontent.fmnl17-4.fna&_nc_gid=AhsShqqG1zVyqar4oRkxbG0&oh=00_AYA8EXrfJxARQwAzWZT2bIDiYM3X3vHoeBl6OGCeVP2bBg&oe=675209A2" alt="Digital Artwork 6">
+            <img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/386161147_288272537488746_5954423454456376621_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeEfiFdPnDJTPiPaCPNQF2WrS4kgskwJ54JLiSCyTAnngsjV_Dm5homfBUFDBLAcKcP0T1Zd-wjkW43amRQRmEbZ&_nc_ohc=UKeTl5WqvdUQ7kNvgFcElTb&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=ALMAvB3p0KP9IWogZE43lK-&oh=00_AYBav-1u7DTU_is9_UoV_YVdRaqV7FDvvcRFRX6wLdq0Pw&oe=6751EE71" alt="Digital Artwork 7">
+            <img src="https://scontent.fmnl17-7.fna.fbcdn.net/v/t39.30808-6/387744538_290710593911607_4895321423407744120_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeEVjDWeQPxWJ56_uySx31GZyAM9D2IVeNjIAz0PYhV42MyAunN3pdK67TxOHS0fTcQguBQxKgf8tBKA8_WlGGVB&_nc_ohc=-ekTCuh13EAQ7kNvgEtPE5y&_nc_zt=23&_nc_ht=scontent.fmnl17-7.fna&_nc_gid=AyXA0zM4P6VprYDWrmYOCFh&oh=00_AYDaCwC6bNV_dApSb9FeQjEUR5j37pC9LA4aI5XBWnUwcg&oe=675200CF" alt="Digital Artwork 8">
+        </div>
+
+        <!-- Traditional Artworks -->
+        <h3>Traditional Artworks</h3>
+        <div class="gallery">
+            <img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/462121444_526670743648923_4267018837885224194_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeG1XcQGkeosD-B2LohNYhWCXm0QXUEtfClebRBdQS18KXcY8pbRYjl1nK0wW2G1VDxZ77v2VhjlPiHRDZPZUcE9&_nc_ohc=i060xnm2AacQ7kNvgH-QSF3&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=AQo1YvBUlYfNvkncz4_Bivc&oh=00_AYDBe4AXJNOkKWMqxcJjKJ1-iBgGKnaG9eV7RrhAbHTLQA&oe=6751E367" alt="Traditional Artwork 1">
+            <img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/461996690_525834790399185_6339277322319061700_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeFn8L5NtmoG3RHePwx_psVcSHoskIf2oJdIeiyQh_agl8ah2jfHN0Dm7LOGykNqWIY2H6as6-VzhGd4EE8Z67rz&_nc_ohc=uYk7lA0Y6cwQ7kNvgEjCZia&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=AbFCMK-gsUa1KnftkDE_lX2&oh=00_AYCgH33a70JI1ErJeszoN9CyVWyg8islKobd4FiQiJc4ww&oe=675206AD" alt="Traditional Artwork 2">
+            <img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/428646321_374527888863210_7155984251529966306_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeEaVjc1imw9eg2HT063gspW_CuPcsxczBP8K49yzFzME6w7FypK6tKOS2nth0PUx05uy8S9W20SUQOhSMsC47ao&_nc_ohc=Xqvtzn77qVYQ7kNvgH2Z_1N&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=AV2JhpTV6GcGvVJYf66g_Ed&oh=00_AYBa1edbetyT6ZyWrzfWWdh-R5PrIPzPy0y8_ydJmwWDsA&oe=6751FD91" alt="Traditional Artwork 3">
+            <img src="https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-6/352303267_213923438256990_6513942939562135889_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeEgg63W0RWmLce_rN7LMjFK0URVXoI97JfRRFVegj3slx3keMeNjjdjpFrCzn8NHf02sKikXRVX-dQxqSSpJ4fU&_nc_ohc=cHrPD0kM-V8Q7kNvgFlPMTu&_nc_zt=23&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=AjJHJbGFatmN6y3W9a0FANZ&oh=00_AYCFeF-nnBXsAsg7ttjKXp8Mjo_u_h-geP4RrAj1RLmR3g&oe=6752087F" alt="Traditional Artwork 4">
+            <img src="https://scontent.fmnl17-7.fna.fbcdn.net/v/t39.30808-6/354591068_217973494518651_2839521053012335713_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeG5qSUZgIYmFn87C4w62IR0nBVJXyR1SNucFUlfJHVI2-zSU1-zitNBNcMMKWVGYWFx5fT0iAtjfxXwsQcUrPuX&_nc_ohc=oozm-WAEnk4Q7kNvgH9ncDZ&_nc_zt=23&_nc_ht=scontent.fmnl17-7.fna&_nc_gid=ARChBpOEbrPUpHZMrOXAeDo&oh=00_AYAI-9wNH45RUyjHXXKYyIqOsEBW1NVR9bdJpGf_c6yTVw&oe=6751F337" alt="Traditional Artwork 5">
+        </div>
+
+        <!-- Films -->
+        <h3>Films</h3>
+        <div class="gallery">
+            <video src="clouds.mp4" controls></video>
+            <video src="Signus-Teaser.mp4" controls></video>
+            <video src="Kabilang_Buhay.mp4" controls></video>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Macaraig Joshua. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<script>
+    // JavaScript for handling multiple lightbox images dynamically
+    document.querySelectorAll('.gallery img').forEach(img => {
+        img.addEventListener('click', () => {
+            const lightbox = document.createElement('div');
+            lightbox.id = 'lightbox';
+            lightbox.style.position = 'fixed';
+            lightbox.style.top = 0;
+            lightbox.style.left = 0;
+            lightbox.style.width = '100%';
+            lightbox.style.height = '100%';
+            lightbox.style.background = 'rgba(0, 0, 0, 0.8)';
+            lightbox.style.display = 'flex';
+            lightbox.style.justifyContent = 'center';
+            lightbox.style.alignItems = 'center';
+            lightbox.style.zIndex = '1000';
+            lightbox.addEventListener('click', () => {
+                lightbox.remove();
+            });
+
+            const imgClone = document.createElement('img');
+            imgClone.src = img.src;
+            imgClone.style.maxWidth = '90%';
+            imgClone.style.maxHeight = '90%';
+            imgClone.style.border = '4px solid white';
+            imgClone.style.borderRadius = '8px';
+
+            lightbox.appendChild(imgClone);
+            document.body.appendChild(lightbox);
+        });
+    });
+</script>
