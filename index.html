@@ -1,299 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orange & Brown Portfolio</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Cyberpunk Portfolio</title>
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: #2f1a08; /* Dark brown background */
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
+body {
+    font-family: 'Courier New', monospace;
+    background: #000; /* Black background */
+    color: #ff9100; /* Neon green text */
+    overflow-x: hidden;
+}
 
-        /* Background Animation - Bubbles */
-        @keyframes bubble {
-            0% {
-                transform: scale(0);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1.5);
-                opacity: 0;
-            }
-        }
+/* Background Animation */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
 
-        .bubbles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 35px solid #ff9100;
+    opacity: 0.6;
+    animation: float 12s linear infinite, sway 5s ease-in-out infinite;
+}
 
-        .bubble {
-            position: absolute;
-            border-radius: 50%;
-            background-color: rgba(255, 68, 0, 0.373); /* Light orange bubble */
-            animation: bubble 3s infinite ease-in-out;
-        }
+/* Keyframe Animations */
+@keyframes float {
+    0% { transform: translateY(100vh) scale(0.5) rotate(0deg); opacity: 0.6; }
+    50% { transform: translateY(50vh) scale(1) rotate(180deg); opacity: 1; }
+    100% { transform: translateY(-20vh) scale(0.8) rotate(360deg); opacity: 0.3; }
+}
 
-        /* Adding different sizes and animations for the bubbles */
-        .bubble:nth-child(1) {
-            width: 40px;
-            height: 40px;
-            top: 20%;
-            left: 50%;
-            animation-duration: 8s;
-            animation-delay: -2s;
-        }
+@keyframes sway {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(30px); }
+}
 
-        .bubble:nth-child(2) {
-            width: 30px;
-            height: 30px;
-            top: 60%;
-            left: 70%;
-            animation-duration: 12s;
-        }
+/* Triangle Instances */
+.triangle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 10s; }
+.triangle:nth-child(2) { left: 30%; animation-delay: 2s; animation-duration: 8s; }
+.triangle:nth-child(3) { left: 50%; animation-delay: 4s; animation-duration: 12s; }
+.triangle:nth-child(4) { left: 70%; animation-delay: 1s; animation-duration: 14s; }
+.triangle:nth-child(5) { left: 90%; animation-delay: 3s; animation-duration: 9s; }
 
-        .bubble:nth-child(3) {
-            width: 50px;
-            height: 50px;
-            top: 30%;
-            left: 30%;
-            animation-duration: 14s;
-            animation-delay: -4s;
-        }
+/* Header */
+.header {
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid #ff9100;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
 
-        .bubble:nth-child(4) {
-            width: 60px;
-            height: 60px;
-            top: 50%;
-            left: 20%;
-            animation-duration: 10s;
-            animation-delay: -6s;
-        }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .bubble:nth-child(5) {
-            width: 35px;
-            height: 35px;
-            top: 10%;
-            left: 80%;
-            animation-duration: 15s;
-        }
+.nav-links {
+    list-style: none;
+    display: flex;
+}
 
-        /* Header */
-        .header {
-            text-align: center;
-            padding: 20px;
-            position: relative;
-            z-index: 1;
-        }
+.nav-links li {
+    margin: 0 1rem;
+}
 
-        .logo h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            font-weight: bold;
-            color: #FFA500; /* Orange */
-            text-shadow: 0 0 10px #FFA500, 0 0 20px #FF6347;
-        }
+.nav-links a {
+    text-decoration: none;
+    color: #ff9100;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
 
-        /* Image Grid */
-        .image-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 20px;
-        }
+.nav-links a:hover {
+    color: #ffe666;
+}
 
-        .grid-item {
-            position: relative;
-            width: 150px;
-            height: 150px;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(255, 165, 0, 0.6);
-            transition: transform 0.3s ease;
-        }
+/* Sections */
+.hero, .about, .projects, .contact {
+    padding: 4rem 2rem;
+    text-align: center;
+    max-width: 80%;
+    margin: 2rem auto;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ff9100;
+    border-radius: 10px;
+}
 
-        .grid-item:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 25px rgba(255, 165, 0, 0.8);
-        }
+.hero h1, .about h2, .projects h2, .contact h2 {
+    color: #ff9100;
+    text-shadow: 0 0 10px #ff9100;
+    margin-bottom: 1rem;
+}
 
-        .grid-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
+/* Footer */
+.footer {
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid #ff9100;
+    color: #ff9100;
+}
 
-        .grid-item:hover img {
-            transform: scale(1.2);
-        }
-
-        /* Main Content */
-        .main {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .main h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 6rem;
-            font-weight: bold;
-            color: #FFA500; /* Orange */
-            text-shadow: 0 0 15px #FF6347, 0 0 25px #FF6347;
-            position: relative;
-            padding-bottom: 5%;
-        }
-
-        /* Continue Button */
-        .continue-btn {
-            position: absolute;
-            bottom: 50px;
-            transform: translateX(0);
-            padding: 15px 30px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #000;
-            background-color: #FF8C00; /* Orange */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-            box-shadow: 0 0 10px #FF6347;
-        }
-
-        .continue-btn:hover {
-            background-color: #FF4500; /* Dark orange */
-            transform: scale(1.1);
-        }
-
-
-        /* Footer Styles */
-        .footer p {
-            padding: 20px;
-            text-align: center;
-            font-family: 'Roboto', sans-serif;
-            color: #FFF;
-            font-size: 13px;
-            text-shadow: 0 0 10px rgba(255, 165, 0, 0.6);
-            line-height: 230%;
-        }
-
-        /* Responsive Design */
-@media (max-width: 1024px) {
-            .grid-item {
-                height: 120px;
-            }
-
-            .main h2 {
-                font-size: 3rem;
-            }
-
-            .continue-btn {
-                font-size: 1.2rem;
-                align-item: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .grid-item {
-                height: 100px;
-            }
-
-            .main h2 {
-                font-size: 2.5rem;
-            }
-
-            .continue-btn {
-                font-size: 1rem;
-                padding: 8px 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo h1 {
-                font-size: 2rem;
-            }
-
-            .grid-item {
-                height: 80px;
-            }
-
-            .main h2 {
-                font-size: 2rem;
-            }
-
-            .continue-btn {
-                font-size: 0.9rem;
-                padding: 6px 12px;
-            }
-                }
     </style>
 </head>
 <body>
-
-    <div class="bubbles">
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
+    <div class="background-animation">
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
     </div>
-    
+
     <header class="header">
-        <div class="logo">
+        <nav class="navbar">
             <h1>Hiroyuki Draw</h1>
-        </div>
-        <div class="image-grid">
-            <div class="grid-item">
-                <img src="https://scontent.fmnl16-1.fna.fbcdn.net/v/t39.30808-6/421616485_358645943784738_6509219215273054710_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=f727a1&amp;_nc_ohc=PFkXE19kDrcQ7kNvgGhQcx5&amp;_nc_zt=23&amp;_nc_ht=scontent.fmnl16-1.fna&amp;_nc_gid=AUQ8KAvDlvNnKXww9mv0o36&amp;oh=00_AYBcTeMHyAhmOwrXA_O9gUvqRa7AeUYgAtSch3HNAoer8Q&amp;oe=674F73F6" alt="image 1">
-            </div>
-            <div class="grid-item">
-                <img src="https://scontent.fmnl16-1.fna.fbcdn.net/v/t39.30808-6/362258795_239742605675073_4313052786355801216_n.jpg?_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=f727a1&amp;_nc_ohc=l1iyMA-NScUQ7kNvgH7pRC7&amp;_nc_zt=23&amp;_nc_ht=scontent.fmnl16-1.fna&amp;_nc_gid=A4qRCtdYaR_Mg5hWAR15-Kz&amp;oh=00_AYCjdojwVOvS0AT78aWj3m9kgm5D_1CMf6I4DZziAs7KEQ&amp;oe=674F6792" alt="image 2">
-            </div>
-            <div class="grid-item">
-                <img src="https://scontent.fmnl16-1.fna.fbcdn.net/v/t39.30808-6/396729487_306349059014427_7376168703940188641_n.jpg?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=f727a1&amp;_nc_ohc=ucEl8WO_scIQ7kNvgF6PmzU&amp;_nc_zt=23&amp;_nc_ht=scontent.fmnl16-1.fna&amp;_nc_gid=AfqXcNKYFSYcaxfLyhqwGgb&amp;oh=00_AYArfiWV1S2fKtxWQ7ylMDG3TFRho4EpWylt8xNwMyk1OA&amp;oe=674F7F89" alt="image 3">
-            </div>
-            <div class="grid-item">
-                <img src="https://scontent.fmnl16-1.fna.fbcdn.net/v/t39.30808-6/379330263_276867811962552_3755353094348534077_n.jpg?_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=f727a1&amp;_nc_ohc=KGyFrk04idYQ7kNvgFijW05&amp;_nc_zt=23&amp;_nc_ht=scontent.fmnl16-1.fna&amp;_nc_gid=AQrwTgBUabLDe8BmaQIQFG6&amp;oh=00_AYB2ydtfQyX42Jy9V9DQUasY69FYZrNU25jWcbccsrYzJg&amp;oe=674F6BE3" alt="image 4">
-            </div>
-            <div class="grid-item">
-                <img src="https://scontent.fmnl16-1.fna.fbcdn.net/v/t39.30808-6/378831966_274294495553217_4074752767485334525_n.jpg?_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=f727a1&amp;_nc_ohc=0wBeAoQuyeYQ7kNvgG1MY4S&amp;_nc_zt=23&amp;_nc_ht=scontent.fmnl16-1.fna&amp;_nc_gid=A-61YZ2lV_0fZ44UKMWR6wF&amp;oh=00_AYCSGgjmW7K6fQj6eUxvACEZDUjTJtfc6HFPgIdz-COC3A&amp;oe=674F57B3" alt="image 5">
-            </div>
-            <div class="grid-item">
-                <img src="https://scontent.fmnl16-1.fna.fbcdn.net/v/t39.30808-6/358153006_230582563257744_2012175710642400260_n.jpg?_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=f727a1&amp;_nc_ohc=pGFmCWSF-sIQ7kNvgFWqMaa&amp;_nc_zt=23&amp;_nc_ht=scontent.fmnl16-1.fna&amp;_nc_gid=AmgJzaKQCJp_MTf6KgpuG1A&amp;oh=00_AYCBlhZQZ7CuHAWrFSt_FAuJYqycC35WlzoT-j3lGw68_w&amp;oe=674F6F9C" alt="image 6">
-            </div>
-        </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutpage.html">About</a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main class="main">
-        <h2>PORTFOLIO</h2>
-    </main>
+    <section class="hero">
+        <h1>Portfolio 2024</h1>
+    </section>
 
-    <a href="About1.html" class="continue-btn">Continue</a>
-
-    <footer>
-        <p>© 2024 Macaraig. All Rights Reserved.</p>
+    <footer class="footer">
+        <p>&copy; 2024 Macaraig Joshua. All rights reserved.</p>
     </footer>
 </body>
 </html>
