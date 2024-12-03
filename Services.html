@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Cyberpunk Portfolio</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: #000; /* Black background */
+    color: #ff9100; /* Neon green text */
+    overflow-x: hidden;
+}
+
+/* Background Animation */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 35px solid #ff9100;
+    opacity: 0.6;
+    animation: float 12s linear infinite, sway 5s ease-in-out infinite;
+}
+
+/* Keyframe Animations */
+@keyframes float {
+    0% { transform: translateY(100vh) scale(0.5) rotate(0deg); opacity: 0.6; }
+    50% { transform: translateY(50vh) scale(1) rotate(180deg); opacity: 1; }
+    100% { transform: translateY(-20vh) scale(0.8) rotate(360deg); opacity: 0.3; }
+}
+
+@keyframes sway {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(30px); }
+}
+
+/* Triangle Instances */
+.triangle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 10s; }
+.triangle:nth-child(2) { left: 30%; animation-delay: 2s; animation-duration: 8s; }
+.triangle:nth-child(3) { left: 50%; animation-delay: 4s; animation-duration: 12s; }
+.triangle:nth-child(4) { left: 70%; animation-delay: 1s; animation-duration: 14s; }
+.triangle:nth-child(5) { left: 90%; animation-delay: 3s; animation-duration: 9s; }
+
+/* Header */
+.header {
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid #ff9100;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ff9100;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffe666;
+}
+
+/* Sections */
+.hero, .about, .projects, .contact {
+    padding: 4rem 2rem;
+    text-align: center;
+    max-width: 80%;
+    margin: 2rem auto;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ff9100;
+    border-radius: 10px;
+}
+
+.hero h1, .about h2, .projects h2, .contact h2 {
+    color: #ff9100;
+    text-shadow: 0 0 10px #ff9100;
+    margin-bottom: 1rem;
+}
+        /* Services Section */
+.services {
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 90%;
+    margin: 2rem auto;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ff9100;
+    border-radius: 10px;
+}
+
+.services h2 {
+    color: #ff9100;
+    text-shadow: 0 0 10px #ff9100;
+    margin-bottom: 1rem;
+}
+
+.services p {
+    color: #ffe666;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.services li {
+    color:#ffe666;
+}
+
+.services strong {
+    font-size: 20px;
+}
+
+/* Service Cards */
+.service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.service-card {
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #ff9100;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ff9100;
+    width: 300px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ff9100;
+}
+
+.service-card i {
+    font-size: 15px;
+    color: #ffecb3;
+    margin-bottom: 1rem;
+}
+
+.service-card strong{
+    font-size: 25px;
+    color:#ffe666;
+}
+
+.service-card h3 {
+    font-size: 25px;
+    color: #ffe666;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: #ffecb3;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+
+/* Footer */
+.footer {
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid #ff9100;
+    color: #ff9100;
+}
+
+    </style>
+    
+</head>
+<body>
+    <div class="background-animation">
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+    </div>
+
+    <header class="header">
+        <nav class="navbar">
+            <h1>Hiroyuki Draw</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="services">
+        <h2>Our Services</h2>
+        <p>Welcome to the <strong>Hiroyuki Draw Services</strong> page. Whether you're looking for captivating visuals, engaging videos, or professional editing, you've come to the right place. Here's how I can bring your vision to life:</p>
+
+        <div class="service-cards">
+            <!-- Digital Arts -->
+            <div class="service-card">
+                <i class="fas fa-palette"></i>
+                <h3>Digital Arts</h3>
+                <p>Create stunning digital illustrations, concept art, and designs with a futuristic edge.</p><br>
+                <ul>
+                    <li><strong>Character Design:</strong><br><br> Personalized characters for branding, storytelling, or gaming.</li><br><br>
+                    <li><strong>Concept Art:</strong><br><br> High-quality concepts for books, films, or other projects.</li><br><br>
+                    <li><strong>Commission Work:</strong> <br><br>Tailored art pieces to suit your specific needs.</li>
+                </ul>
+            </div>
+
+            <!-- Video Editing -->
+            <div class="service-card">
+                <i class="fas fa-video"></i>
+                <h3>Video Editing</h3>
+                <p>Transform raw footage into polished videos with professional editing techniques.</p><br>
+                <ul>
+                    <li><strong>Post-Production Editing:</strong><br><br> Seamless transitions, color grading, and dynamic effects.</li><br><br>
+                    <li><strong>Motion Graphics:</strong> <br><br>Animated titles, lower thirds, and overlays for a professional finish.</li><br><br>
+                    <li><strong>Content Editing:</strong><br><br> YouTube videos, vlogs, tutorials, and more.</li><br><br>
+                    <li><strong>Audio Syncing:</strong> <br><br>Ensure that your visuals and soundtracks are perfectly aligned.</li>
+                </ul>
+            </div>
+
+            <!-- Videography -->
+            <div class="service-card">
+                <i class="fas fa-film"></i>
+                <h3>Videography</h3>
+                <p>Capture cinematic moments with creative direction and high-quality equipment.</p><br><br><br>
+                <ul>
+                    <li><strong>Filming Stories:</strong> <br><br>Capture the essence of your story through cinematic visuals and compelling narratives.</li><br><br>
+                    <li><strong>Creative Shoots:</strong> <br><br>Music videos, short films, or creative campaigns.</li><br><br>
+                    <li><strong>Brand Storytelling:</strong> <br><br>Build your narrative with engaging visuals for businesses or personal brands.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Macaraig Joshua. All rights reserved.</p>
+    </footer>
+</body>
+</html>
